@@ -75,7 +75,7 @@ class ContactUpdate(UpdateView):
         if self.request.POST:
             context["formset"] = PhoneNumberFormSet(self.request.POST, instance=self.object)
         else:
-            context['formset'] = PhoneNumberFormSet()
+            context['formset'] = PhoneNumberFormSet(instance=self.object)
         return context
 
     def get_success_url(self):
